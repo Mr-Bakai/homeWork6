@@ -1,34 +1,22 @@
-import org.w3c.dom.ls.LSOutput;
 
 public class GenericOne<T extends  Number> implements GetAndIncrement<T>{
     private T justOne;
-    private T justOne1;
+    private T justOne2;
 
-    public void GenericOne(T justOne, T justOne1){
-        this.justOne=justOne;
-        this.justOne1=justOne1;
-    }
-
-    public void setJustOne(T justOne){
-        this.justOne=justOne;
-    }
-
-    public T getJustOne(){
-        return justOne;
-    }
-
-    public T getJustOne1() {
-        return justOne1;
-    }
-
-    public void setJustOne1(T justOne1) {
-        this.justOne1 = justOne1;
+    @Override
+    public void add(T t, T t2) {
+        justOne =t;
+        justOne2 =t2;
     }
 
     @Override
-    public void addAndIncr() {
-        System.out.println("\n--------------------------------------------");
-        System.out.println(justOne.doubleValue() + justOne1.doubleValue());
+    public T getValue(){
+        return  justOne;
+    }
+
+    @Override
+    public T getValue2() {
+        return justOne2;
     }
 }
 
@@ -41,4 +29,14 @@ public class GenericOne<T extends  Number> implements GetAndIncrement<T>{
 
     В главном классе создать несколько
     экземпляров обобщенного класса.                         ☑️
+ */
+
+
+
+/*  привет
+     интерфейс у тебя не совсем обобщенный
+     т.е. ты конечно указал, что он обобщенный, но нигде это не используешь
+     метод должен либо принимать параметр S, либо возвращать его
+     и буква должны быть одинаковыми, либо и в классе, и в интерфесе S, либо T
+
  */
